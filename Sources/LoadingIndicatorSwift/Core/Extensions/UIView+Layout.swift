@@ -1,8 +1,8 @@
 //
 //  UIView+Layout.swift
-//  SwiftLoading
+//  LoadingIndicatorSwift
 //
-//  Created by CS37-MacMini on 02/08/24.
+//  Created by Sagar Kulkarni on 02/08/24.
 //
 
 import UIKit

@@ -1,8 +1,8 @@
 //
 //  LoadingIndicatorStyle.swift
-//  SwiftLoading
+//  LoadingIndicatorSwift
 //
-//  Created by CS37-MacMini on 12/08/24.
+//  Created by Sagar Kulkarni on 12/08/24.
 //
 
 public enum LoadingIndicatorStyle {

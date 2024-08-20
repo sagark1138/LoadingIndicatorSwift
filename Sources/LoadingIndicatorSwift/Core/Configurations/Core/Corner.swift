@@ -1,8 +1,8 @@
 //
 //  Corner.swift
-//  LoadingDemo
+//  LoadingIndicatorSwift
 //
-//  Created by CS17-MAC on 29/04/24.
+//  Created by Sagar Kulkarni on 29/04/24.
 //
 
 import UIKit
