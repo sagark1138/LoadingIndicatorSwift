@@ -14,7 +14,7 @@ public final class LoaderConfiguration {
     
     /// Initialises the loader configuration with new values or default values
     /// - Parameters:
-    ///     - indicator: The configuration of the indicator view and its properties that can be changed at runtime, for more info see ``IndicatorConfiguration``
+    ///     - indicator: The configuration of the indicator view and its properties that can be changed at runtime, for more info see ``IndicatorConfiguration``
     ///     - message:  The configuration of the message view and its properties that can be changed at runtime, for more info see ``MessageConfiguration``
     ///     - container: The configuration of the container view and its properties that can be changed at runtime, for more info see ``ContainerConfiguration``
     public init(indicator: IndicatorConfiguration = .standard, message: MessageConfiguration = .standard, container: ContainerConfiguration = .standard) {

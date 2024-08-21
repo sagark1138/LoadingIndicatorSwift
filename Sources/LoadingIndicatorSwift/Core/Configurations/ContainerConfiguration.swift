@@ -9,7 +9,7 @@ import Foundation
 import CoreGraphics
 import UIKit
 
-public struct ContainerConfiguration: Equatable {
+public class ContainerConfiguration: Equatable {
     var background: UIColor
     var corner: Corner
     var shadow: Shadow
@@ -32,9 +32,7 @@ public struct ContainerConfiguration: Equatable {
     }
     
     /// Standard container configuration with default values
-    public static var standard: ContainerConfiguration {
-        .init()
-    }
+    public static var standard: ContainerConfiguration = .init()
     
     /// Container configuration without any visuals
     public static var none: ContainerConfiguration {
@@ -43,13 +41,13 @@ public struct ContainerConfiguration: Equatable {
     
     /// Copies the current container configuration with new or default values
     public func copyWith(background: UIColor? = nil, corner: Corner? = nil, shadow: Shadow? = nil, border: Border? = nil, padding: Padding? = nil) -> ContainerConfiguration {
-        let background = background ?? self.background
-        let corner = corner ?? self.corner
-        let shadow = shadow ?? self.shadow
-        let border = border ?? self.border
-        let padding = padding ?? self.padding
+        self.background = background ?? self.background
+        self.corner = corner ?? self.corner
+        self.shadow = shadow ?? self.shadow
+        self.border = border ?? self.border
+        self.padding = padding ?? self.padding
         
-        return ContainerConfiguration(background: background, corner: corner, shadow: shadow, border: border, padding: padding)
+        return self
     }
     
     /// Checks if two container configurations are equal

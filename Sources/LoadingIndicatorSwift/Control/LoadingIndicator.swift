@@ -61,7 +61,7 @@ public class LoadingIndicator: UIControl {
     private var indicatorConfiguration: IndicatorConfiguration = .init()  {
         didSet {
             indicatorView.foregroundColor = indicatorConfiguration.foregroundColor
-            indicatorView.size = indicatorConfiguration.size
+            indicatorView.loaderSize = indicatorConfiguration.size
         }
     }
  
@@ -108,7 +108,7 @@ public class LoadingIndicator: UIControl {
         return stackView
     }()
     
-    private lazy var indicatorView : IndicatableView = {
+    private lazy var indicatorView : Indicatable = {
         let view = indicatorConfiguration.view.baseView
         view.translatesAutoresizingMaskIntoConstraints = false
         return indicatorConfiguration.view
@@ -152,6 +152,7 @@ public class LoadingIndicator: UIControl {
         configuration = LoaderConfiguration.standard
         
         setupViews()
+        configureLayout()
         
         self.parentView = parentView
     }
@@ -201,8 +202,6 @@ public class LoadingIndicator: UIControl {
         topConstraint?.isActive = true
         bottomConstraint = stackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -containerConfiguration.padding.edgeInsets.bottom)
         bottomConstraint?.isActive = true
-        
-        configureLayout()
     }
     
     private func configureLayout() {
@@ -221,8 +220,9 @@ public class LoadingIndicator: UIControl {
         messageLabel.isHidden = !style.componentVisibility.showMessage
         indicatorView.baseView.isHidden = !style.componentVisibility.showIndicator
         
-        let configuration = style.componentVisibility.showContainer ? containerConfiguration : ContainerConfiguration.none
         layoutIfNeeded()
+
+        let configuration = style.componentVisibility.showContainer ? containerConfiguration : ContainerConfiguration.none
         containerView.apply(configuration: configuration)
     }
     

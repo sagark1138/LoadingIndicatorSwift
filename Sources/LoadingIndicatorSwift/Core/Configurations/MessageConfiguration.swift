@@ -8,12 +8,12 @@
 import Foundation
 import UIKit
 
-public struct MessageConfiguration: Equatable {
-    let color: UIColor
-    let font: UIFont
-    let alignment: NSTextAlignment
-    let position: ContentPosition
-    let spacing: CGFloat
+public class MessageConfiguration: Equatable {
+    var color: UIColor
+    var font: UIFont
+    var alignment: NSTextAlignment
+    var position: ContentPosition
+    var spacing: CGFloat
     
     /// Initializes a new MessageConfiguration with new values or default values
     /// - Parameters:
@@ -31,18 +31,21 @@ public struct MessageConfiguration: Equatable {
     }
 
     /// Standard message configuration with default values
-    public static var standard: MessageConfiguration {
-        .init()
-    }
+    public static var standard: MessageConfiguration = .init()
     
     /// Copies the current message configuration with new values or default values
     public func copyWith(color: UIColor? = nil, font: UIFont? = nil, alignment: NSTextAlignment? = nil, position: ContentPosition? = nil, spacing: CGFloat? = nil) -> MessageConfiguration {
-        let color = color ?? self.color
-        let font = font ?? self.font
-        let alignment = alignment ?? self.alignment
-        let position = position ?? self.position
-        let spacing = spacing ?? self.spacing
+        self.color = color ?? self.color
+        self.font = font ?? self.font
+        self.alignment = alignment ?? self.alignment
+        self.position = position ?? self.position
+        self.spacing = spacing ?? self.spacing
         
-        return MessageConfiguration(color: color, font: font, alignment: alignment, position: position, spacing: spacing)
+        return self
+    }
+    
+    /// Checks if two message configurations are equal
+    public static func == (lhs: MessageConfiguration, rhs: MessageConfiguration) -> Bool {
+        lhs.color == rhs.color && lhs.font == rhs.font && lhs.alignment == rhs.alignment && lhs.position == rhs.position && lhs.spacing == rhs.spacing
     }
 }
