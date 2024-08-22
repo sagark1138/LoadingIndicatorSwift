@@ -59,6 +59,12 @@ A loading indicator with default configurations will be display,
 - An overlay over the screen
 - An indicator which is system activity indicator, and have medium size with grey foreground color
 
+**Preview**
+
+https://github.com/user-attachments/assets/48d4839f-fe75-4ca3-98b5-77e73f7d7ffe
+
+
+
 ### **Listen to loading indicator states**
 
 Using action (iOS 14+) 
@@ -91,7 +97,7 @@ override func viewDidLoad() {
 
 ### **Customise default loading indicator**
 
-### Update size and foreground color
+#### **Update size and foreground color**
 
 **Always update** loading indicator configurations before adding into parent view to prevent any UI issues. 
 
@@ -108,11 +114,16 @@ loadingIndicator.configuration = .standard.copyWith(
 loadingIndicator.add(in: view)
 ```
 
+**Preview**
+
+https://github.com/user-attachments/assets/c3aa1cb3-c739-4fda-8c2e-cc64a2ee65da
+
+
 There are 4 available sizes:
 
-1. Small : Provides size with width of 40 pts and height of 40 pts
-2. Medium: Provides size with width of 60 pts and height of 60 pts
-3. Large: Provides size with width of 80 pts and height of 80 pts
+1. Small : Provides size with width and height of 24 pts
+2. Medium: Provides size with width and height of 34 pts
+3. Large: Provides size with width and height of 44 pts
 4. Custom: Provides custom provided size
 
 Example:
@@ -126,13 +137,18 @@ loadingIndicator.configuration = .standard.copyWith(
 )
 ```
 
-### Update overlay color
+#### **Update overlay color**
 
 ```swift
 loadingIndicator.overlayColor = .systemBlue.withAlphaComponent(0.2)
 ```
+**Preview**
 
-### Show message in loading indicator
+https://github.com/user-attachments/assets/a1f29868-c250-4aae-a92e-e56a37434864
+
+
+
+#### **Show message in loading indicator**
 
 Step 1: Set style of loading indicator white adding in parent view
 
@@ -146,6 +162,11 @@ Step 2: Set message to loading indicator
 loadingIndicator.message = "Loading..."
 ```
 
+**Preview**
+
+https://github.com/user-attachments/assets/db7a9610-c9b8-40bc-b171-01fd73467287
+
+
 <aside>
 💡 Note that, Empty message will be hidden in loading indicator
 
@@ -153,7 +174,7 @@ loadingIndicator.message = "Loading..."
 
 ### Customise message in loading indicator
 
-### Update font and color
+#### **Update font and color**
 
 ```swift
 loadingIndicator.configuration = .standard.copyWith(
@@ -164,7 +185,12 @@ loadingIndicator.configuration = .standard.copyWith(
 )
 ```
 
-### Update position relative to indicator
+**Preview**
+
+https://github.com/user-attachments/assets/3faa0c47-5d34-4721-b993-167ff3995230
+
+
+#### **Update position relative to indicator**
 
 ```swift
 loadingIndicator.configuration = .standard.copyWith(
@@ -173,16 +199,29 @@ loadingIndicator.configuration = .standard.copyWith(
     )
 )
 ```
+**Preview**
 
-### Update spacing between indicator and message
+https://github.com/user-attachments/assets/dd028c17-50a0-4efc-897f-888a33394ef1
+
+
+#### **Update spacing between indicator and message**
 
 ```swift
 loadingIndicator.configuration = .standard.copyWith(
     message: .standard.copyWith(
-        spacing: 8
+        spacing: 10
     )
 )
 ```
+<aside>
+💡 Note that, default spacing is 8
+
+</aside>
+
+**Preview**
+
+https://github.com/user-attachments/assets/865b9309-ebae-41d7-870b-f06b07e43f67
+
 
 ### Show container in loading indicator
 
@@ -192,9 +231,19 @@ Set style of loading indicator white adding in parent view
 loadingIndicator.add(in: view, style: .indicator_message_container)
 ```
 
+<aside>
+💡 Note that, container will be display with default configurations.
+
+</aside>
+
+**Preview**
+
+https://github.com/user-attachments/assets/7bcfb6e8-9d5e-4790-b860-0628729a4e00
+
+
 ### Customise container in loading indicator
 
-### Update background color and corder radius
+#### **Update background color and corder radius**
 
 ```swift
 loadingIndicator.configuration = .standard.copyWith(
@@ -204,6 +253,11 @@ loadingIndicator.configuration = .standard.copyWith(
     )
 )
 ```
+
+**Preview**
+
+https://github.com/user-attachments/assets/da2c3040-080d-4e2c-a9bf-1d1305e14f7e
+
 
 There are 4 options available to configure corners:
 
@@ -244,7 +298,7 @@ loadingIndicator.configuration = .standard.copyWith(
 )
 ```
 
-### Add padding to container
+#### **Add padding to container**
 
 ```swift
 loadingIndicator.configuration = .standard.copyWith(
@@ -253,6 +307,11 @@ loadingIndicator.configuration = .standard.copyWith(
     )
 )
 ```
+
+**Preview**
+
+https://github.com/user-attachments/assets/79f9c8cf-bed9-448e-8018-5fc403237075
+
 
 Below example shows all 3 options to configure padding.
 
@@ -281,34 +340,44 @@ loadingIndicator.configuration = .standard.copyWith(
 )
 ```
 
-### Add border to container
+#### **Add border to container**
 
 ```swift
 loadingIndicator.configuration = .standard.copyWith(
     container: .standard.copyWith(
-            border: .init(color: .systemCyan, width: 2), 
+            border: .init(color: .systemRed, width: 2), 
     )
 )
 ```
 
-### Add shadow to container
+**Preview**
+
+https://github.com/user-attachments/assets/400dd566-d4ba-426e-84d4-a14a91b312b0
+
+
+#### **Add shadow to container**
 
 ```swift
 loadingIndicator.configuration = .standard.copyWith(
     container: .standard.copyWith(
             shadow: .init(
-                    color: .darkGray, 
+                    color: .systemTeal, 
                     offset: .init(width: 0, height: 4), 
                     radius: 8, 
-                    opacity: 0.2
+                    opacity: 0.3
             ),
     )
 )
 ```
 
+**Preview**
+
+https://github.com/user-attachments/assets/ef61918b-710e-4fd5-884b-d444ac36f36e
+
+
 ### Create and use custom loading indicators
 
-### Lottie indicator
+#### **Lottie indicator**
 
 Step 1: Add dependency of package Lotte for iOS in your project
 
@@ -372,11 +441,15 @@ loadingIndicator.configuration = .standard.copyWith(
 )
 ```
 
+**Preview**
+
+https://github.com/user-attachments/assets/ca002296-5fc3-4512-be27-ef9d4f97dc23
+
 That's it, it's ready to use. 
 
 The Lottie animation will now be seamlessly integrated into your loading indicator, providing a visually appealing and customized experience for users. This approach allows for greater flexibility in designing loading indicators that match your app's aesthetic and enhance user engagement during wait times.
 
-### Simple rotating view indicator
+#### **Simple rotating view indicator**
 
 Step 1: Create a new file ‘CustomViewIndicator’ and paste below code inside the file 
 
@@ -442,6 +515,11 @@ loadingIndicator.configuration = .standard.copyWith(
     )
 )
 ```
+
+**Preview**
+
+https://github.com/user-attachments/assets/818ca881-3dea-4ac8-bd82-d9e8cbec01be
+
 
 That's it, it's ready to use. 
 

@@ -19,11 +19,11 @@ public enum LoaderSize: Equatable {
     public var size: CGSize {
         switch self {
         case .small:
-            return CGSize(width: 40, height: 40)
+            return CGSize(width: 24, height: 24)
         case .medium:
-            return CGSize(width: 60, height: 60)
+            return CGSize(width: 34, height: 34)
         case .large:
-            return CGSize(width: 80, height: 80)
+            return CGSize(width: 44, height: 44)
         case .custom(let size):
             return size
         }
