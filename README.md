@@ -14,7 +14,7 @@ To install LoadingIndicatorSwift using [Swift Package Manager](https://github.co
 or you can add the following dependency to your `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/sagark1138/loading-indicator-swift", from: "1.0.0")
+.package(url: "https://github.com/sagark1138/loading-indicator-swift", from: "1.0.1")
 ```
 
 ## Usage Guide
