@@ -142,6 +142,7 @@ loadingIndicator.configuration = .standard.copyWith(
 ```swift
 loadingIndicator.overlayColor = .systemBlue.withAlphaComponent(0.2)
 ```
+
 **Preview**
 
 https://github.com/user-attachments/assets/a1f29868-c250-4aae-a92e-e56a37434864
@@ -172,6 +173,7 @@ https://github.com/user-attachments/assets/db7a9610-c9b8-40bc-b171-01fd73467287
 
 </aside>
 
+
 ### Customise message in loading indicator
 
 #### **Update font and color**
@@ -199,6 +201,7 @@ loadingIndicator.configuration = .standard.copyWith(
     )
 )
 ```
+
 **Preview**
 
 https://github.com/user-attachments/assets/dd028c17-50a0-4efc-897f-888a33394ef1
@@ -218,6 +221,7 @@ loadingIndicator.configuration = .standard.copyWith(
 
 </aside>
 
+
 **Preview**
 
 https://github.com/user-attachments/assets/865b9309-ebae-41d7-870b-f06b07e43f67
@@ -235,6 +239,7 @@ loadingIndicator.add(in: view, style: .indicator_message_container)
 💡 Note that, container will be display with default configurations.
 
 </aside>
+
 
 **Preview**
 
